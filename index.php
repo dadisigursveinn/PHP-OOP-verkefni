@@ -125,13 +125,26 @@ echo "<pre>Person 2: ", print_r($person2, TRUE), "</pre>";
  síðan getur maður notað [use] til þess að fá aðgang að öðrum clössum ef að property eða function innan
  classa sem að kemur úr öðru namespace þá getur maður notað [use x as z] til þess að refera til x 
   Autoloader er síðan forrit sem setur þessa classa í alvöru möppur. PSR-4 er autoloader sem hægt er að nota.
- 
 
-                                          
-  
+ Interfaces
+  Interface er eins og blueprint fyrir classa.
+  Þú getur implementað eins mörgum interfaceum og not eru fyrir.
+  Interface eru ekki nauðsinleg fyrir lítil verkefni sem að þú gerir sjálfur en ef að þú ert t.d. að vinna
+  í hóp og classar eiga að vera eins upp byggðir þá getur þú notað interface þannig að classar séu með sömu
+  sömu functions með sömu nöfnum. 
 
-
+ Bók class
 */
+class book
+{
+    public $title;
+    public $price;
+
+    public function setPrice($newPrice)
+    {
+      
+    }
+}
 
 class MyClass
 {
