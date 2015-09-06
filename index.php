@@ -197,6 +197,35 @@ class ProBook extends Book
   echo $islenska2->getPrice();
   echo $islenska2->getTitle();
   echo $islenska2->getPublisher();
+/*
+  User class
+*/
+class User
+{
+  private $_email;
+  private $_password;
+
+  public function setPassword($newPass)
+  {
+    $this->_password = $newPass;
+  }
+
+  public function getPassword()
+  {
+    return $this->_password;
+  }
+
+  public function setEmail($newEmail)
+  {
+    $this->_email = $newEmail;
+  }
+
+  public function __construct($userInfo)
+  {
+    $this->_email = $userInfo[0];
+    $this->_password = $userInfo[1];
+  }
+}
 
 class MyClass
 {
