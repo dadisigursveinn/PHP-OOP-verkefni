@@ -135,16 +135,68 @@ echo "<pre>Person 2: ", print_r($person2, TRUE), "</pre>";
 
  Bók class
 */
-class book
+class Book
 {
-    public $title;
-    public $price;
+    private $_title;
+    private $_price;
 
     public function setPrice($newPrice)
     {
-      
+     $this->_price = $newPrice; 
+    }
+
+    public function getPrice()
+    {
+      return $this->_price;
+    }
+
+    public function setTitle($newTitle)
+    {
+      $this->_title = $newTitle;
+    }
+
+    public function getTitle()
+    {
+      return $this->_title;
+    }
+
+    public function __construct($title, $price)
+    {
+      $this->_price = $price;
+      $this->_title = $title;
     }
 }
+/*
+Object útfrá bók classanum
+*/
+$efnafraedi = new Book("Efnafræði 101", 4899);
+$staerdfraedi = new Book("Stærðfræði 501", 8999);
+$islenska = new Book("Brennu Njáls saga", 7499);
+/*
+class sem extendar book
+*/
+class ProBook extends Book
+{
+  private $_publisher;
+
+  public function getPublisher()
+  {
+    return $this->_publisher;
+  }
+
+  public function setPublisher($newPublisher)
+  {
+    $this->_publisher = $newPublisher;
+  }
+}
+/*
+  Birta upplýsingar
+*/
+  $islenska2 = new ProBook("Ljóðamál", 499);
+  $islenska2->setPublisher("Arnaldur Indriðason");
+  echo $islenska2->getPrice();
+  echo $islenska2->getTitle();
+  echo $islenska2->getPublisher();
 
 class MyClass
 {
