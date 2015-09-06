@@ -107,6 +107,29 @@ echo "<pre>Person 1: ", print_r($person1, TRUE), "</pre>";
 echo "<pre>Person 2: ", print_r($person2, TRUE), "</pre>";
 
 /*
+ Í þessu dæmi er OOP lausnin betri vegna þess að búa til nýja persónu
+ er mun stittri kóði og erfiðara að gera mistök.
+
+ Munurinn á private og protected?
+ Public properties og methods eru aðgengileg hvaðan sem er(innan klassans og utan 
+ classans)
+ Protected þýðir að það er einungis hægt að nálgast propertyið eða methodið innan
+ classans eða í descendant classes
+ Private property eða method er einungis hagt að komast í innan classans þar sem
+ það er skilgreint
+
+ Namespaces og autoloading?   https://mattstauffer.co/blog/a-brief-introduction-to-php-namespacing
+ Það eru rosa skrítnir hlutir sem að ég finn ekki alltof mikið að skyljanlegum leiðbeningum um :(
+ Namespaces voru sett í php til þess að gera það auðveldara að sortera classana sína
+ Namespace er þá bara eins og virtual directory til þess að sortera classana
+ síðan getur maður notað [use] til þess að fá aðgang að öðrum clössum ef að property eða function innan
+ classa sem að kemur úr öðru namespace þá getur maður notað [use x as z] til þess að refera til x 
+  Autoloader er síðan forrit sem setur þessa classa í alvöru möppur. PSR-4 er autoloader sem hægt er að nota.
+ 
+
+                                          
+  
+
 
 */
 
@@ -132,13 +155,7 @@ echo $obj->prop1;//callar á propertiið prop1 í classanum
 
 var_dump($obj)
 /*
-Munurinn á private og protected?
- Public properties og methods eru aðgengileg hvaðan sem er(innan klassans og utan 
- classans)
- Protected þýðir að það er einungis hægt að nálgast propertyið eða methodið innan
- classans eða í descendant classes
- Private property eða method er einungis hagt að komast í innan classans þar sem
- það er skilgreint
+
 
 */
 ?>
